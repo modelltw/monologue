@@ -25,11 +25,11 @@ module Monologue
     end
 
     def sidebar_section_for(title, &block)
-       content_tag(:div, class: 'panel panel-monologue-sidebar') do
-         content_tag(:div, class: 'panel-heading', content_tag(:h3, class: 'panel-title', title)) +
-             capture(&block)
-       end
-     end
+      content_tag(:div, class: 'panel panel-default') do
+        content_tag(:div, content_tag(:h3, title, class: 'panel-title'), class: 'panel-heading') +
+        capture(&block)
+      end
+    end
 
   end
 end
